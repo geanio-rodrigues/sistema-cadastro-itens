@@ -1,8 +1,8 @@
 <?php
 
 namespace App\Http\Controllers\Api;
-
 use App\Http\Controllers\Controller;
+use App\Models\Department;
 use Illuminate\Http\Request;
 
 class DepartmentController extends Controller
@@ -12,7 +12,7 @@ class DepartmentController extends Controller
      */
     public function index()
     {
-        //
+        return response()->json(Department::all());
     }
 
     /**
@@ -26,9 +26,9 @@ class DepartmentController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Department $department)
     {
-        //
+        return response()->json($department);
     }
 
     /**
