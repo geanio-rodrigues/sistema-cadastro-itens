@@ -32,6 +32,7 @@ services:
     networks: [app-network]
 
   db:
+    image: mariadb:10.6  # Versão fixada para estabilidade
     container_name: mariadb_database
     restart: unless-stopped
     environment:
