@@ -11,7 +11,7 @@ const editing = ref(null) // Estado para controlar qual item está em edição
 // Função para buscar todos os departamentos da API
 const fetchAll = async () => {
     loading.value = true
-    error.value = true
+    error.value = null
     try {
         const { data } = await api.get('/departments')
         departments.value = data
