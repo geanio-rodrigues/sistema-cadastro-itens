@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\Department;
 use Illuminate\Http\Request;
+use illuminate\Validation\Rule;
 
 class DepartmentController extends Controller
 {
@@ -36,9 +37,11 @@ class DepartmentController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Department $department)
     {
-        //
+        $data = $request->validate(['name' => ['required', 'string', 'max:255', Rule::unique('departments')->ignore($department->id)]]);
+        $department->update($data);
+        return response()->json($department);
     }
 
     /**
