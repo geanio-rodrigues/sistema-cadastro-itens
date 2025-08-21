@@ -31,17 +31,22 @@ class ItemController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Item $item)
     {
-        //
+        return response()->json($item->load('department'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Item $item)
     {
-        //
+        $data = $request->validate(([
+            'name' => 'required|string|max:255',
+            'department_id' => 'required|exists:departments,id',
+        ]));
+        $item->update($data);
+        return response()->json($item->load('department')); 
     }
 
     /**
