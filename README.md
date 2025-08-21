@@ -7,6 +7,20 @@ docker-compose up -d --build
 
 ---
 
+## Credenciais do Banco de Dados
+
+As credencias do banco de dados para o ambiente local são definindas no arquivo `docker-compose.yml` e passadas como variáveis de ambiente para o container da aplicação.
+
+-   **Host:** `db`
+-   **Porta:** `3306`
+-   **Banco de Dados:** `laravel_db`
+-   **Usuário:** `user`
+-   **Senha:** `password`
+
+Esses valores devem ser replicados no arquivo `.env` do Laravel para que a aplicação consiga se conectar ao banco de dados.
+
+---
+
 ## Estratégia de Branches
 
 Este projeto utiliza um fluxo de trabalho com as seguintes branches principais:
