@@ -20,7 +20,12 @@ class ItemController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->validate(([
+            'name' => 'required|string|max:255',
+            'department_id' => 'required|exists:departments,id',
+        ]));
+        $item = Item::create($data);
+        return response()->json($item->load('department'), 201);
     }
 
     /**
