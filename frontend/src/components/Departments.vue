@@ -100,4 +100,65 @@ const saveEdit = async () => {
 </template>
 
 <style scoped>
+form {
+    display: flex;
+    gap: .5rem;
+    margin-bottom: 1rem;
+}
+
+form input {
+    flex: 1;
+    padding: .5rem .75rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+button {
+    border: 0;
+    padding: .5rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: .5rem;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #eee;
+    padding: .5rem .75rem;
+    border-radius: 8px;
+}
+
+li input {
+    padding: .5rem .75rem;
+    border: 1px solid #007bff;
+    border-radius: 8px;
+    flex: 1;
+}
+
+.actions {
+    display: flex;
+    gap: .5rem;
+}
+
+.actions button {
+    background-color: #6c757d;
+}
+
+.actions button:hover {
+    background-color: #5a6268;
+}
 </style>
