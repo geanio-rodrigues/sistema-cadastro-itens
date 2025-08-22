@@ -30,6 +30,7 @@ const createDep = async () => {
     if (!newName.value.trim()) return
     try {
         const { data } = await api.post('/departments', { name: newName.value })
+        departments.value.push(data);
         newName.value = '' // Limpa o input
         error.value = null
     } catch (error) {
