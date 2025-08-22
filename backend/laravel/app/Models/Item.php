@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Item extends Model{
     protected $fillable = ['name', 'department_id'];
-    public function departmente(): BelongsTo { return $this->belongsTo(Department::class); }
+    public function department(): BelongsTo { return $this->belongsTo(Department::class); }
 }
