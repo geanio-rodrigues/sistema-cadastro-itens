@@ -1,6 +1,22 @@
 # Sistema de Cadastro de Itens por Departamento
 
-Stack: Docker (PHP-FPM + Nginx + MariaDB), Laravel 11, Vue 3 + Vite + Axios.
+## Tecnologias Utilizadas
+
+Este projeto foi construído utilizando um conjunto de tecnolgoias modernas para desenvolvimento web full-stack, encapsuladas em uma ambiente Docker para garantir consistência e portabilidade.
+
+### **Back-end**
+* **PHP:** `8.2`
+* **Laravel:** `12.25`
+* **MariaDB:** `10.6`
+
+### **Front-end**
+* **Vue.js:** `3.5`
+* **Vite:** `7.1`
+* **Axios:** Utilizado para as requisições HTTP para a API.
+
+### **Ambiente de Desenvolvimento**
+* **Docker & Docker Compose:** Orquestração dos contêineres de serviço.
+* **Nginx:** Servidor web e proxy reverso.
 
 ## Como subir
 docker-compose up -d --build
