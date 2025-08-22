@@ -30,7 +30,7 @@ const createDep = async () => {
     if (!newName.value.trim()) return
     try {
         const { data } = await api.post('/departments', { name: newName.value })
-        departments.value = '' // Limpa o input
+        newName.value = '' // Limpa o input
         error.value = null
     } catch (error) {
         error.value = 'Não foi possível criar. O departamento pode já existir.'
