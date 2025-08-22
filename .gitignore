@@ -1,0 +1,9 @@
+# .gitignore
+/backend/vendor
+/backend/node_modules
+/frontend/node_modules
+/vendor
+/node_modules
+/.idea
+/.vscode
+.env
