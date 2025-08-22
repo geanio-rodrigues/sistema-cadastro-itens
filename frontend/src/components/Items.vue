@@ -11,7 +11,7 @@ const form = ref({ name: '', department_id: '' }) // Estado para o formulário d
 const editing = ref(null) // Estado para controlar a edição
 
 // Funções para buscar departamentos e itens da API
-const fetchItems = () => api.get('/items').then(response => (items.valu = response.data))
+const fetchItems = () => api.get('/items').then(response => (items.value = response.data))
 const fetchDeps = () => api.get('/departments').then(response => (departments.value = response.data))
 const refresh = async () => {
     loading.value = true
