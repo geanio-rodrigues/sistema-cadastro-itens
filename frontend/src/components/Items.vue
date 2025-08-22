@@ -75,7 +75,7 @@ const saveEdit = async () => {
     <section>
         <h2>Itens</h2>
         <p v-if="loading">Carrgando...</p>
-        <p v-if="error" style="color:red">{{  error }}</p>
+        <p v-if="error" style="color:red">{{ error }}</p>
         
         <form @submit.prevent="createItem">
             <input v-model="form.name" placeholder="Nome do novo item" required />
@@ -86,6 +86,8 @@ const saveEdit = async () => {
             <button type="submit">Adicionar</button>
         </form>
         
+        <span v-if="items.length === 0" style="color: black; font-weight: bold;">Nenhum item cadastrado</span>
+
         <ul>
             <li v-for="item in items" :key="item.id">
                 <template v-if="editing && editing.id === item.id">
