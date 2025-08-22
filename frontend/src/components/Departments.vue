@@ -77,6 +77,8 @@ const saveEdit = async () => {
             <input v-model="newName" placeholder="Nome do novo departamento" required />
             <button type="submit">Adicionar</button>
         </form>
+        
+        <span v-if="departments.length === 0" style="color: black; font-weight: bold;">Nenhum departamento cadastrado</span>
 
         <ul>
             <li v-for="dep in departments" :key="dep.id">
