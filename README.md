@@ -85,6 +85,14 @@ Esses valores devem ser replicados no arquivo `.env` do Laravel para que a aplic
 
 ---
 
+## Estrutura dos Containers
+
+-   **app_laravel** → Container da aplicação Laravel
+-   **nginx_server** → Servidor Nginx servindo a aplicação
+-   **mariadb_database** → Banco de dados MariaDB
+
+---
+
 ## Estratégia de Branches
 
 Este projeto utiliza um fluxo de trabalho com as seguintes branches principais:
