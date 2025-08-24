@@ -18,8 +18,28 @@ Este projeto foi construído utilizando um conjunto de tecnolgoias modernas para
 * **Docker & Docker Compose:** Orquestração dos contêineres de serviço.
 * **Nginx:** Servidor web e proxy reverso.
 
-## Como subir
-docker-compose up -d --build
+---
+
+## Endpoints da API
+
+A API segue o padrão RESTful do Laravel com `apiResource`.
+
+**Departamentos:**
+
+-    **GET /api/departments** → lista todos os departamentos
+-    **GET /api/departments/{id}** → obtém um departamento específico
+-    **POST /api/departments** → cria um novo departamento
+-    **PUT /api/departments/{id}** → atualiza um departamento
+-    **DELETE /api/departments/{id}** → remove um departamento
+  
+**Itens:**
+
+-    **GET /api/items** → lista todos os itens
+-    **GET /api/items/{id}** → obtém um item específico
+-    **POST /api/items** → cria um novo item
+-    **PUT /api/items/{id}** → atualiza um item
+-    **DELETE /api/items/{id}** → remove um item
+
 
 ---
 
