@@ -1,9 +1,73 @@
 # Sistema de Cadastro de Itens por Departamento
 
-Stack: Docker (PHP-FPM + Nginx + MariaDB), Laravel 11, Vue 3 + Vite + Axios.
+## Tecnologias Utilizadas
 
-## Como subir
-docker-compose up -d --build
+Este projeto foi construído utilizando um conjunto de tecnolgoias modernas para desenvolvimento web full-stack, encapsuladas em uma ambiente Docker para garantir consistência e portabilidade.
+
+### **Back-end**
+* **PHP:** `8.2`
+* **Laravel:** `12.25`
+* **MariaDB:** `10.6`
+
+### **Front-end**
+* **Vue.js:** `3.5`
+* **Vite:** `7.1`
+* **Axios:** Utilizado para as requisições HTTP para a API.
+
+### **Ambiente de Desenvolvimento**
+* **Docker & Docker Compose:** Orquestração dos contêineres de serviço.
+* **Nginx:** Servidor web e proxy reverso.
+
+---
+
+## Endpoints da API
+
+A API segue o padrão RESTful do Laravel com `apiResource`.
+
+**Departamentos:**
+
+-    **GET /api/departments** → lista todos os departamentos
+-    **GET /api/departments/{id}** → obtém um departamento específico
+-    **POST /api/departments** → cria um novo departamento
+-    **PUT /api/departments/{id}** → atualiza um departamento
+-    **DELETE /api/departments/{id}** → remove um departamento
+  
+**Itens:**
+
+-    **GET /api/items** → lista todos os itens
+-    **GET /api/items/{id}** → obtém um item específico
+-    **POST /api/items** → cria um novo item
+-    **PUT /api/items/{id}** → atualiza um item
+-    **DELETE /api/items/{id}** → remove um item
+
+---
+
+## Instalação e execução
+
+**Pré-requisitos:**
+-  [Docker](https://docs.docker.com/get-started/get-docker/)
+-  [Docker Compose](https://docs.docker.com/compose/install/)
+
+
+1. **Clone o repositório**
+```bash
+git clone https://github.com/geanio-rodrigues/sistema-cadastro-itens
+cd sistema-cadastro-itens
+```
+
+2. **Suba os containers com Docker Compose**
+```bash
+docker compose up -d --build
+```
+
+3. **Acesse o container do backend Laravel para rodar as migrations**
+```bash
+docker exec -it app_laravel php artisan migrate --seed
+```
+
+4. **Acesse a Aplicação**
+  -  **Frontend (Vue 3):** [http://localhost:5173](./)
+  -  **Backend (Laravel API):** [http://localhost:8000](./)
 
 ---
 
@@ -18,6 +82,14 @@ As credencias do banco de dados para o ambiente local são definindas no arquivo
 -   **Senha:** `password`
 
 Esses valores devem ser replicados no arquivo `.env` do Laravel para que a aplicação consiga se conectar ao banco de dados.
+
+---
+
+## Estrutura dos Containers
+
+-   **app_laravel** → Container da aplicação Laravel
+-   **nginx_server** → Servidor Nginx servindo a aplicação
+-   **mariadb_database** → Banco de dados MariaDB
 
 ---
 
