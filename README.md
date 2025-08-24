@@ -40,6 +40,34 @@ A API segue o padrão RESTful do Laravel com `apiResource`.
 -    **PUT /api/items/{id}** → atualiza um item
 -    **DELETE /api/items/{id}** → remove um item
 
+---
+
+## Instalação e execução
+
+**Pré-requisitos:**
+-  [Docker](https://docs.docker.com/get-started/get-docker/)
+-  [Docker Compose](https://docs.docker.com/compose/install/)
+
+
+1. **Clone o repositório**
+```bash
+git clone https://github.com/geanio-rodrigues/sistema-cadastro-itens
+cd sistema-cadastro-itens
+```
+
+2. **Suba os containers com Docker Compose**
+```bash
+docker compose up -d --build
+```
+
+3. **Acesse o container do backend Laravel para rodar as migrations**
+```bash
+docker exec -it app_laravel php artisan migrate --seed
+```
+
+4. **Acesse a Aplicação**
+  -  **Frontend (Vue 3):** [http://localhost:5173](./)
+  -  **Backend (Laravel API):** [http://localhost:8000](./)
 
 ---
 
